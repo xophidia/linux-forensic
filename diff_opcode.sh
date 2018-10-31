@@ -45,8 +45,6 @@ do
 		inode_start=$(echo $line | awk '{print $1}')
 	else
 		t=$(echo $line | awk '{print $1}')
-		#echo "t: "$t
-		#echo "inode-start"$inode_start
 		diff=$(( $t - $inode_start))
 		if [ $diff -gt 1 ]; then
 			echo "\e[31m Décallage détecté de $diff \e[0m"
